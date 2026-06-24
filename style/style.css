@@ -289,12 +289,192 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* =========================================================
+   GRID DE VIDEOS (dentro de app-card)
+   ========================================================= */
+
+.video-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.video-grid__empty {
+  color: var(--gris-claro);
+  font-size: 0.88rem;
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 20px 0;
+}
+
+.video-card {
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,212,0,0.18);
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  color: var(--blanco);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.video-card:hover,
+.video-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--amarillo);
+  background: rgba(255,255,255,0.09);
+}
+
+.video-card__thumb-wrap {
+  position: relative;
+  display: block;
+  background: #000;
+}
+
+.video-card__thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.video-card__play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px; height: 48px;
+  background: var(--rojo);
+  color: var(--blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 6px 16px rgba(226,35,26,0.5);
+}
+
+.video-card__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 14px 4px;
+}
+
+.video-card__desc {
+  font-size: 0.8rem;
+  color: var(--gris-claro);
+  padding: 0 14px 14px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   REPRODUCTOR PERSONALIZADO (modal)
+   ========================================================= */
+
+.player-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.player-modal--open { display: flex; }
+
+.player-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2,5,24,0.92);
+}
+
+.player-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 16px;
+}
+
+.player-modal__close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  background: rgba(255,255,255,0.12);
+  color: var(--blanco);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.player-modal__close:hover { background: var(--amarillo); color: var(--azul-marino-oscuro); }
+
+.player-modal__title {
+  color: var(--blanco);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin: 0 0 10px;
+  padding-right: 40px;
+}
+
+.player-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(255,212,0,0.4);
+}
+
+.player-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  pointer-events: none; /* todo el control pasa por nuestros botones */
+}
+
+.player-controls {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+}
+
+.player-btn {
+  background: rgba(255,255,255,0.14);
+  border: none;
+  color: var(--blanco);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+.player-btn:hover { background: var(--amarillo); color: var(--azul-marino-oscuro); }
+
+.player-btn--fullscreen { margin-left: auto; }
+
+/* =========================================================
    BREAKPOINTS — mobile first hacia arriba
    ========================================================= */
 
 @media (min-width: 640px) {
   .landing__title { font-size: 1.9rem; }
   .menu { grid-template-columns: repeat(2, 1fr); }
+  .video-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 1024px) {
@@ -302,4 +482,6 @@ button { font-family: inherit; cursor: pointer; }
   .landing__logo { width: 170px; }
   .landing__title { font-size: 2.3rem; }
   .menu { grid-template-columns: repeat(3, 1fr); }
+  .app-card { max-width: 980px; }
+  .video-grid { grid-template-columns: repeat(3, 1fr); }
 }

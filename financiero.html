@@ -23,12 +23,31 @@
     <section class="app-card">
       <div class="app-card__icon">$</div>
       <h1 class="app-card__title">Financiero</h1>
-      <p class="app-card__desc">Gestión financiera y contable de la compañía.</p>
-      <div class="app-card__placeholder">
-        Aquí se integrará el contenido / sistema de <strong>Financiero</strong>.
-      </div>
+      <p class="app-card__desc">Videos de capacitación del área financiera y contable.</p>
+
+      <div class="video-grid" id="videoGrid"></div>
     </section>
   </main>
 
+  <!-- Reproductor personalizado: solo Play/Pausa y Pantalla completa -->
+  <div class="player-modal" id="playerModal" aria-hidden="true">
+    <div class="player-modal__backdrop" id="playerBackdrop"></div>
+    <div class="player-modal__panel">
+      <button class="player-modal__close" id="playerClose" aria-label="Cerrar video">&times;</button>
+      <p class="player-modal__title" id="playerTitle"></p>
+      <div class="player-wrap" id="playerWrap">
+        <iframe id="playerIframe" src="" title="Reproductor de video" allow="autoplay; fullscreen; encrypted-media"></iframe>
+        <div class="player-controls">
+          <button class="player-btn" id="btnPlayPause" aria-label="Reproducir">▶</button>
+          <button class="player-btn player-btn--fullscreen" id="btnFullscreen" aria-label="Pantalla completa">⛶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/videos-financiero.js"></script>
+  <script src="js/player.js"></script>
+    <!-- Fin bloque Video -->
+
+  
 </body>
 </html>
