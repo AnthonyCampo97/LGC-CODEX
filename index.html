@@ -3,86 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capacitación | LGC</title>
-<meta name="description" content="Portal de capacitación con videos para el ingreso de personal nuevo.">
+<title>Portal de Sistemas | La Gran Colombia Supermercados</title>
+<meta name="description" content="Portal de acceso a los sistemas internos de La Gran Colombia Supermercados.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style/style.css">
-<link rel="icon" href="img/favicon.png">
+<link rel="icon" href="img/logo-la-gran-colombia.png">
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="topbar__inner">
-      <div class="topbar__brand">
-        <span class="topbar__crate" aria-hidden="true"></span>
-        <span class="topbar__title">Capacítate</span>
-      </div>
-      <button class="topbar__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+  <div class="landing">
+    <img class="landing__logo" src="img/logo-la-gran-colombia.png" alt="La Gran Colombia Supermercados">
+    <p class="landing__eyebrow">Área de Sistemas</p>
+    <h1 class="landing__title">Portal de Sistemas</h1>
+    <p class="landing__sub">Selecciona el sistema al que deseas ingresar.</p>
 
-  <nav class="chipnav" id="chipnav" aria-label="Categorías de capacitación">
-    <button class="chip chip--active" data-category="todos">Todos</button>
-    <button class="chip" data-category="bienvenida">Bienvenida</button>
-    <button class="chip" data-category="seguridad">Seguridad</button>
-    <button class="chip" data-category="procesos">Procesos</button>
-    <button class="chip" data-category="herramientas">Herramientas</button>
-  </nav>
+    <nav class="menu" aria-label="Menú de sistemas">
+      <a class="menu__item" href="financiero.html">
+        <span class="menu__icon">$</span>
+        <span class="menu__text">
+          <span class="menu__label">Financiero</span>
+          <span class="menu__desc">Gestión financiera y contable</span>
+        </span>
+        <span class="menu__arrow">›</span>
+      </a>
 
-  <main>
-    <section class="hero">
-      <div class="hero__text">
-        <p class="hero__eyebrow">Ruta de inducción</p>
-        <h1 class="hero__title">Tu primera semana, <span>paso a paso</span></h1>
-        <p class="hero__sub">Mira los videos en el orden sugerido. Tu avance se guarda automáticamente en este dispositivo.</p>
-      </div>
-      <div class="hero__progress" id="heroProgress">
-        <svg viewBox="0 0 120 120" class="hero__ring" aria-hidden="true">
-          <circle cx="60" cy="60" r="52" class="hero__ring-bg"/>
-          <circle cx="60" cy="60" r="52" class="hero__ring-fg" id="ringFg"/>
-        </svg>
-        <div class="hero__progress-text">
-          <span id="progressPct">0%</span>
-          <small>completado</small>
-        </div>
-      </div>
-    </section>
+      <a class="menu__item menu__item--rojo" href="comercial.html">
+        <span class="menu__icon">📈</span>
+        <span class="menu__text">
+          <span class="menu__label">Comercial</span>
+          <span class="menu__desc">Ventas, clientes y proveedores</span>
+        </span>
+        <span class="menu__arrow">›</span>
+      </a>
 
-    <section class="grid-wrap">
-      <div class="grid" id="videoGrid" aria-live="polite"></div>
-      <p class="grid__empty" id="gridEmpty" hidden>No hay videos en esta categoría todavía.</p>
-    </section>
-  </main>
+      <a class="menu__item menu__item--azul" href="nomina.html">
+        <span class="menu__icon">🧑‍💼</span>
+        <span class="menu__text">
+          <span class="menu__label">Nómina Web</span>
+          <span class="menu__desc">Gestión de personal y nómina</span>
+        </span>
+        <span class="menu__arrow">›</span>
+      </a>
 
-  <button class="fab" id="fabResume" hidden>
-    <span class="fab__icon">▶</span>
-    <span class="fab__label">Continuar viendo</span>
-  </button>
+      <a class="menu__item" href="pos.html">
+        <span class="menu__icon">🧾</span>
+        <span class="menu__text">
+          <span class="menu__label">POS</span>
+          <span class="menu__desc">Punto de venta</span>
+        </span>
+        <span class="menu__arrow">›</span>
+      </a>
 
-  <div class="modal" id="videoModal" aria-hidden="true">
-    <div class="modal__backdrop" id="modalBackdrop"></div>
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal__close" id="modalClose" aria-label="Cerrar video">&times;</button>
-      <div class="modal__frame">
-        <iframe id="modalIframe" src="" title="Video de capacitación" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <div class="modal__info">
-        <span class="modal__category" id="modalCategory"></span>
-        <h2 class="modal__title" id="modalTitle"></h2>
-        <p class="modal__desc" id="modalDesc"></p>
-        <button class="modal__mark" id="modalMark">Marcar como visto</button>
-      </div>
-    </div>
+      <a class="menu__item menu__item--rojo" href="carnes.html">
+        <span class="menu__icon">🥩</span>
+        <span class="menu__text">
+          <span class="menu__label">Carnes</span>
+          <span class="menu__desc">Gestión del área de carnes</span>
+        </span>
+        <span class="menu__arrow">›</span>
+      </a>
+
+      <a class="menu__item menu__item--azul" href="otros.html">
+        <span class="menu__icon">⚙️</span>
+        <span class="menu__text">
+          <span class="menu__label">Otros</span>
+          <span class="menu__desc">Herramientas adicionales</span>
+        </span>
+        <span class="menu__arrow">›</span>
+      </a>
+    </nav>
+
+    <p class="landing__footer">© <span id="year"></span> La Gran Colombia Supermercados &middot; Área de Sistemas</p>
   </div>
 
-  <footer class="footer">
-    <p>Portal interno LGC-TI &middot; <span id="year"></span></p>
-  </footer>
-
-  <script src="js/videos.js"></script>
-  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
