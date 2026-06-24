@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capacitación | LGC</title>
+<meta name="description" content="Portal de capacitación con videos para el ingreso de personal nuevo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style/style.css">
+<link rel="icon" href="img/favicon.png">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="topbar__brand">
+        <span class="topbar__crate" aria-hidden="true"></span>
+        <span class="topbar__title">Capacítate</span>
+      </div>
+      <button class="topbar__menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="chipnav" id="chipnav" aria-label="Categorías de capacitación">
+    <button class="chip chip--active" data-category="todos">Todos</button>
+    <button class="chip" data-category="bienvenida">Bienvenida</button>
+    <button class="chip" data-category="seguridad">Seguridad</button>
+    <button class="chip" data-category="procesos">Procesos</button>
+    <button class="chip" data-category="herramientas">Herramientas</button>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Ruta de inducción</p>
+        <h1 class="hero__title">Tu primera semana, <span>paso a paso</span></h1>
+        <p class="hero__sub">Mira los videos en el orden sugerido. Tu avance se guarda automáticamente en este dispositivo.</p>
+      </div>
+      <div class="hero__progress" id="heroProgress">
+        <svg viewBox="0 0 120 120" class="hero__ring" aria-hidden="true">
+          <circle cx="60" cy="60" r="52" class="hero__ring-bg"/>
+          <circle cx="60" cy="60" r="52" class="hero__ring-fg" id="ringFg"/>
+        </svg>
+        <div class="hero__progress-text">
+          <span id="progressPct">0%</span>
+          <small>completado</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-wrap">
+      <div class="grid" id="videoGrid" aria-live="polite"></div>
+      <p class="grid__empty" id="gridEmpty" hidden>No hay videos en esta categoría todavía.</p>
+    </section>
+  </main>
+
+  <button class="fab" id="fabResume" hidden>
+    <span class="fab__icon">▶</span>
+    <span class="fab__label">Continuar viendo</span>
+  </button>
+
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" id="modalClose" aria-label="Cerrar video">&times;</button>
+      <div class="modal__frame">
+        <iframe id="modalIframe" src="" title="Video de capacitación" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal__info">
+        <span class="modal__category" id="modalCategory"></span>
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <p class="modal__desc" id="modalDesc"></p>
+        <button class="modal__mark" id="modalMark">Marcar como visto</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Portal interno LGC-TI &middot; <span id="year"></span></p>
+  </footer>
+
+  <script src="js/videos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
