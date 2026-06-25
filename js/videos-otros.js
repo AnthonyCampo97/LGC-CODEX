@@ -1,5 +1,5 @@
 /* =========================================================
-   VIDEOS — Sección CARNES
+   VIDEOS — Sección OTROS
    ---------------------------------------------------------
    Agrega aquí los videos de capacitación de esta sección.
    "youtubeId" es el código que va después de "youtu.be/"
@@ -9,8 +9,8 @@
 
 const VIDEOS_SECCION = [
   {
-    id: "carnes1",
-    title: "Video de ejemplo - carnes",
+    id: "otros1",
+    title: "Video de ejemplo - otros",
     description: "Reemplaza este video por el contenido real de capacitación.",
     youtubeId: "dQw4w9WgXcQ"
   }

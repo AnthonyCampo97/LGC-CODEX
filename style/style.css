@@ -468,6 +468,54 @@ button { font-family: inherit; cursor: pointer; }
 .player-btn--fullscreen { margin-left: auto; }
 
 /* =========================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================================= */
+
+.whatsapp-fab {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: var(--blanco);
+  padding: 10px 16px 10px 12px;
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  font-weight: 700;
+  font-size: 0.82rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.whatsapp-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.45);
+}
+
+.whatsapp-fab__icon {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.whatsapp-fab__icon svg { width: 100%; height: 100%; }
+
+.whatsapp-fab__label { white-space: nowrap; }
+
+@media (max-width: 480px) {
+  .whatsapp-fab__label { display: none; }
+  .whatsapp-fab {
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
    BREAKPOINTS — mobile first hacia arriba
    ========================================================= */
 
