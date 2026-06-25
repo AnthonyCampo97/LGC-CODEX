@@ -516,8 +516,111 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* =========================================================
-   BREAKPOINTS — mobile first hacia arriba
+   SECCIÓN DE MANUALES (PDF)
    ========================================================= */
+
+.doc-section {
+  width: 100%;
+  margin-top: 36px;
+}
+
+.doc-section__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--amarillo);
+  text-align: left;
+  margin: 0 0 14px;
+  padding-top: 18px;
+  border-top: 1.5px dashed rgba(255,212,0,0.25);
+}
+
+.doc-card__thumb-wrap {
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--azul-medio) 0%, var(--azul-marino) 100%);
+}
+
+.doc-card__icon {
+  font-size: 2.6rem;
+}
+
+.doc-card__badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--rojo);
+  color: var(--blanco);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* ---------- Visor de PDF (reutiliza .player-modal) ---------- */
+
+.pdf-viewer__frame {
+  position: relative;
+  width: 100%;
+  max-height: 78vh;
+  background: #1a1f33;
+  border-radius: 14px;
+  overflow: auto;
+  border: 2px solid rgba(255,212,0,0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+}
+
+.pdf-viewer__frame canvas {
+  display: block;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pdf-viewer__loading {
+  color: var(--gris-claro);
+  font-size: 0.9rem;
+  padding: 60px 0;
+}
+
+.pdf-viewer__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.pdf-viewer__page-info {
+  color: var(--gris-claro);
+  font-size: 0.85rem;
+  min-width: 120px;
+  text-align: center;
+}
+
+.player-btn:disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* =========================================================
+   BLOQUEO DE IMPRESIÓN (capa extra de protección)
+   ========================================================= */
+@media print {
+  body * { display: none !important; }
+  body::before {
+    content: "La impresión de este contenido no está permitida.";
+    display: block !important;
+    padding: 40px;
+    font-family: sans-serif;
+  }
+}
 
 @media (min-width: 640px) {
   .landing__title { font-size: 1.9rem; }
