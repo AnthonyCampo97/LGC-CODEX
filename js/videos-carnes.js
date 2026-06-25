@@ -49,6 +49,12 @@ const VIDEOS_SECCION = [
     title: "AJUSTE SENSOR GAP SM300",
     description: "Proceso tencico AJUSTE SENSOR GAP SM300",
     youtubeId: "iNpBoIpx6Zs"
+  },
+  {
+    id: "carnes8",
+    title: "REGISTRO INVIMA CARNES",
+    description: "Agregar registro Invima en etiqueta de precios productos cárnicos desde el software administrativo ",
+    youtubeId: "-z7s1YFoPNc"
   }
   
 ];
