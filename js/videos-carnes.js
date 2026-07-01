@@ -55,6 +55,12 @@ const VIDEOS_SECCION = [
     title: "REGISTRO INVIMA CARNES",
     description: "Agregar registro Invima en etiqueta de precios productos cárnicos desde el software administrativo ",
     youtubeId: "-z7s1YFoPNc"
+  },
+  {
+    id: "carnes9",
+    title: "AJUSTE SENSOR GAP - SM100",
+    description: "Calibración de rollo en balanza SM100 - Sensor GAP ",
+    youtubeId: "EHrAOO3hbXI"
   }
   
 ];
