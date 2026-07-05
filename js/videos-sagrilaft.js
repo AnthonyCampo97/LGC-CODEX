@@ -8,8 +8,21 @@
 const VIDEOS_SECCION = [
   {
     id: "sag-v1",
-    title: "Video de ejemplo - SAGRILAFT",
-    description: "Reemplaza este video por el contenido real de capacitación SAGRILAFT.",
-    youtubeId: "dQw4w9WgXcQ"
+    title: "SAGRILAFT",
+    description: "Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos, Financiación del Terrorismo y Proliferación de Armas de Destrucción Masiva",
+    youtubeId: "iuQ-PTuRqBE"
+  },
+  {
+    id: "sag-v2",
+    title: "PTEE",
+    description: "Programa de Transparencia y Ética Empresarial",
+    youtubeId: "1PfJmoJTomY"
+  },
+  {
+    id: "sag-v3",
+    title: "PDP",
+    description: "Protección de Datos Personales",
+    youtubeId: "7_QmHZ5Uvuk"
   }
+
 ];

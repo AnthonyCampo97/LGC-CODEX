@@ -8,8 +8,8 @@
 const DOCUMENTOS_SECCION = [
   {
     id: "doc-pos1",
-    title: "Manual de ejemplo - POS",
-    description: "PDF de prueba para validar el visor. Reemplázalo por tu manual real.",
-    file: "docs/manual-ejemplo-financiero.pdf"
+    title: "AUDITORIA Y REENVIO DE FACTURAS POS DIAN ",
+    description: "Validacion de facturas POS ventas diarias",
+    file: "docs/SG1/AUDITORIA-FEPOS.pdf"
   }
 ];
