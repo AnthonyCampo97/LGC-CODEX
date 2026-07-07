@@ -24,22 +24,33 @@
     <section class="app-card">
 
       <div class="app-card__icon sagrilaft-icon">🛡️</div>
-      <h1 class="app-card__title">COMPLIANCE</h1>
-      <p class="app-card__desc">Gestión de Riesgos y Cultura de Cumplimiento</p>
+      <h1 class="app-card__title">SAGRILAFT</h1>
+      <p class="app-card__desc">Sistema de Autocontrol y Gestión del Riesgo Integral de Lavado de Activos, Financiación del Terrorismo y Financiamiento de la Proliferación de Armas de Destrucción Masiva.</p>
+      <p>_______________________________</p>
+      <!-- ── BANNER DINÁMICO ────────────────────────── -->
+      <div class="sagrilaft-banner" id="sagrilaftBanner">
+        <div class="banner__track" id="bannerTrack"></div>
+        <div class="banner__controls">
+          <button class="banner__nav-btn" id="bannerPrev" aria-label="Slide anterior">&#8249;</button>
+          <div class="banner__dots" id="bannerDots"></div>
+          <button class="banner__nav-btn" id="bannerNext" aria-label="Slide siguiente">&#8250;</button>
+          <button class="banner__pause-btn" id="bannerPause">⏸ Detener</button>
+        </div>
+      </div>
 
       <!-- ── SECCIÓN 1: VIDEOS ───────────────────────── -->
       <div class="video-grid" id="videoGrid"></div>
 
       <!-- ── SECCIÓN 2: MANUALES ────────────────────── -->
       <section class="doc-section" id="docSection">
-        <h2 class="doc-section__title">Píldoras de conocimiento</h2>
+        <h2 class="doc-section__title">Manuales</h2>
         <div class="video-grid" id="docGrid"></div>
       </section>
 
       <!-- ── SECCIÓN 3: ENCUESTAS ───────────────────── -->
       <section class="encuesta-section" id="encuestaSection">
         <h2 class="doc-section__title encuesta-section__title">Encuestas</h2>
-        <p class="encuesta-section__desc">Completa el formulario según corresponda al Sistema o Programa.</p>
+        <p class="encuesta-section__desc">Completa los formularios asignados a tu proceso de capacitación.</p>
         <div class="encuesta-grid" id="encuestaGrid"></div>
       </section>
 
@@ -90,8 +101,10 @@
   <script src="js/videos-sagrilaft.js"></script>
   <script src="js/docs-sagrilaft.js"></script>
   <script src="js/encuestas-sagrilaft.js"></script>
+  <script src="js/slides-sagrilaft.js"></script>
   <script src="js/player.js"></script>
   <script src="js/pdf-viewer.js"></script>
   <script src="js/encuestas.js"></script>
+  <script src="js/banner.js"></script>
 </body>
 </html>

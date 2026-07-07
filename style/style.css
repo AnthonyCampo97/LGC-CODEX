@@ -52,7 +52,7 @@ button { font-family: inherit; cursor: pointer; }
 .landing {
   min-height: 100vh;
   min-height: 100dvh;
-  background-image: linear-gradient(180deg, rgba(6,13,56,0.55) 0%, rgba(6,13,56,0.85) 65%, rgba(6,13,56,0.97) 100%), url("../img/banner-landing1.jpeg");
+  background-image: linear-gradient(180deg, rgba(6,13,56,0.55) 0%, rgba(6,13,56,0.85) 65%, rgba(6,13,56,0.97) 100%), url("../img/banner-landing.jpg");
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -231,7 +231,7 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--azul-marino-oscuro);
   background-image:
     linear-gradient(180deg, rgba(6,13,56,0.92), rgba(6,13,56,0.97)),
-    url("../img/banner-landing2.jpeg");
+    url("../img/banner-landing.jpg");
   background-size: cover;
   background-position: center;
   padding: 40px 18px 60px;
@@ -607,6 +607,165 @@ button { font-family: inherit; cursor: pointer; }
 .player-btn:disabled {
   opacity: 0.35;
   pointer-events: none;
+}
+
+/* =========================================================
+   BANNER DINÁMICO SAGRILAFT
+   ========================================================= */
+
+.sagrilaft-banner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--azul-marino);
+  margin-bottom: 28px;
+  border: 1.5px solid rgba(255,212,0,0.25);
+  user-select: none;
+}
+
+.banner__track {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+}
+
+.banner__slide {
+  display: none;
+  width: 100%;
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px 22px 80px;
+  box-sizing: border-box;
+  animation: bannerFadeIn 0.6s ease;
+}
+
+.banner__slide--active { display: block; }
+
+@keyframes bannerFadeIn {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.banner__content {
+  max-width: 600px;
+  position: relative;
+}
+
+.banner__acento {
+  display: block;
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 12px;
+}
+
+.banner__titulo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  margin: 0 0 10px;
+  color: var(--blanco);
+}
+
+.banner__subtitulo {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--gris-claro);
+  margin: 0 0 16px;
+}
+
+.banner__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.banner__cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* Barra de controles inferior */
+.banner__controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: linear-gradient(0deg, rgba(6,13,56,0.85) 0%, transparent 100%);
+}
+
+.banner__nav-btn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: var(--blanco);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex: 0 0 auto;
+  transition: background 0.15s;
+}
+.banner__nav-btn:hover { background: var(--amarillo); color: var(--azul-marino-oscuro); }
+
+.banner__dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.banner__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  border: none;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.banner__dot--active {
+  background: var(--amarillo);
+  transform: scale(1.3);
+}
+
+.banner__pause-btn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: var(--blanco);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.banner__pause-btn:hover { background: rgba(255,255,255,0.28); }
+
+/* Responsive */
+@media (min-width: 640px) {
+  .banner__slide { min-height: 280px; padding: 44px 36px 90px; }
+  .banner__titulo { font-size: 1.55rem; }
+  .banner__subtitulo { font-size: 0.9rem; }
+}
+
+@media (min-width: 1024px) {
+  .banner__slide { min-height: 320px; padding: 54px 48px 90px; }
+  .banner__titulo { font-size: 1.85rem; }
 }
 
 /* =========================================================
