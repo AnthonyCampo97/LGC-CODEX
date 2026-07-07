@@ -65,6 +65,78 @@ const DOCUMENTOS_SECCION = [
     title: "JUEGO LIMPIO CON LA COMPETENCIA",
     description: "Transparencia y etica empresarial",
     file: "docs/SAGRILAFT/PILDORA-ABR26-PTEE.pdf"
+  },
+  {
+    id: "sag-doc11",
+    title: "SAGRILAFT",
+    description: "DELITOS FUENTE DE LAFT",
+    file: "docs/SAGRILAFT/COMPONENTES-SAGRILAFT.pdf"
+  },
+  {
+    id: "sag-doc12",
+    title: "DEFINICIONES SAGRILAFT",
+    description: "11 Definciones Claves",
+    file: "docs/SAGRILAFT/DEFINICIONES-SAGRILAFT.pdf"
+  },
+  {
+    id: "sag-doc13",
+    title: "DEFINICIONES SAGRILAFT",
+    description: "11 Definciones Claves",
+    file: "docs/SAGRILAFT/DEFINICIONES-SAGRILAFT.pdf"
+  },
+  {
+    id: "sag-doc14",
+    title: "EL RIESGO DEL 'Pitufeo'",
+    description: "¿Que es el pitufeo o estructuracíón?",
+    file: "docs/SAGRILAFT/PILDORA-ABR26-SAGRILAFT.pdf"
+  },
+  {
+    id: "sag-doc15",
+    title: "ALERTAS DE RIESGO",
+    description: "¿Que comportamientos pueden activar una alerta de riesgo?",
+    file: "docs/SAGRILAFT/PILDORA-DIC25-SAGRILAFT.pdf"
+  },
+  {
+    id: "sag-doc16",
+    title: "CONFIDENCIALIDAD EN SAGRILAFT",
+    description: "La información es un activo valioso",
+    file: "docs/SAGRILAFT/PILDORA-MAY26-SAGRILAFT.pdf"
+  },
+  {
+    id: "sag-doc17",
+    title: "CANALAES DE DENUNCIA",
+    description: "Como usarlos y confidencialidad",
+    file: "docs/SAGRILAFT/PILDORA-MAR26-PTEE.pdf"
+  },
+  {
+    id: "sag-doc18",
+    title: "RELACIÓN CON EL SECTOR PUBLICO",
+    description: "Nuestras interacciones con entidades y funcionarios",
+    file: "docs/SAGRILAFT/PILDORA-MAY26-PTEE.pdf"
+  },
+  {
+    id: "sag-doc19",
+    title: "CONFLICTO DE INTERES",
+    description: "¿Que es un conflicto de interes?",
+    file: "docs/SAGRILAFT/PILDORA-NOV25-PTEE.pdf"
+  },
+  {
+    id: "sag-doc20",
+    title: "SOBORNO TRANSNACIONAL",
+    description: "Politica frente al soborno",
+    file: "docs/SAGRILAFT/PILDORA-SEP25-PTEE.pdf"
+  },
+  {
+    id: "sag-doc21",
+    title: "SOBORNO TRANSNACIONAL",
+    description: "Politica frente al soborno",
+    file: "docs/SAGRILAFT/PILDORA-SEP25-PTEE.pdf"
+  },
+  {
+    id: "sag-doc22",
+    title: "PRINCIPIOS PROTECCIÓN DE DATOS",
+    description: "7 Principios de la protección de datos personales",
+    file: "docs/SAGRILAFT/PILDORA-ENE26-PDP.pdf"
   }
 
 ];
