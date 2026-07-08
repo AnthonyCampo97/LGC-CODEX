@@ -29,7 +29,7 @@ const POPUP_CONFIG = {
      TIPO DE CONTENIDO
      Escribe exactamente "video" o "imagen" (con comillas)
      ══════════════════════════════════════════════════════ */
-  tipo: "imagen",   // <── CAMBIA AQUÍ: "video" o "imagen"
+  tipo: "video",   // <── CAMBIA AQUÍ: "video" o "imagen"
 
 
   /* ══════════════════════════════════════════════════════
@@ -44,7 +44,7 @@ const POPUP_CONFIG = {
      autoplay → true: el video arranca solo
                 false: el usuario le da play manualmente
      ══════════════════════════════════════════════════════ */
-  youtubeId: "qRpLrqg-z3k?",
+  youtubeId: "HQFbRK5m5aQ?",
   autoplay: true,
 
 
