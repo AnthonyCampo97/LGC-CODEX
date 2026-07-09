@@ -29,7 +29,7 @@ const POPUP_CONFIG = {
      TIPO DE CONTENIDO
      Escribe exactamente "video" o "imagen" (con comillas)
      ══════════════════════════════════════════════════════ */
-  tipo: "video",   // <── CAMBIA AQUÍ: "video" o "imagen"
+  tipo: "imagen",   // <── CAMBIA AQUÍ: "video" o "imagen"
 
 
   /* ══════════════════════════════════════════════════════
