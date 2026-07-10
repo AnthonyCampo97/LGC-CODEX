@@ -12,6 +12,6 @@ const VIDEOS_SECCION = [
     id: "comercial1",
     title: "Video de ejemplo - comercial",
     description: "Reemplaza este video por el contenido real de capacitación.",
-    youtubeId: "YpoUzo-CflQ"
+    youtubeId: "qRpLrqg-z3k"
   }
 ];

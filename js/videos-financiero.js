@@ -12,6 +12,6 @@ const VIDEOS_SECCION = [
     id: "fin1",
     title: "Introducción al área Financiera",
     description: "Conceptos básicos y flujo general del área financiera.",
-    youtubeId: "gq8gdAVIPTE"
+    youtubeId: "qRpLrqg-z3k"
   }
 ];

@@ -12,6 +12,6 @@ const VIDEOS_SECCION = [
     id: "pos1",
     title: "Video de ejemplo - pos",
     description: "Reemplaza este video por el contenido real de capacitación.",
-    youtubeId: "dQw4w9WgXcQ"
+    youtubeId: "qRpLrqg-z3k"
   }
 ];
