@@ -10,8 +10,20 @@
 const VIDEOS_SECCION = [
   {
     id: "pos1",
-    title: "Video de ejemplo - pos",
-    description: "Reemplaza este video por el contenido real de capacitación.",
-    youtubeId: "qRpLrqg-z3k"
+    title: "VALIDACION TECLADO",
+    description: "Error comun de teclado en equipo POS",
+    youtubeId: "w_R-9OYKObY"
+  },
+  {
+    id: "pos2",
+    title: "VALICADION IMPRESORA POS",
+    description: "Revisión conexión impresora POS - Falla común",
+    youtubeId: "09tsATevBAU"
+  },
+  {
+    id: "pos3",
+    title: "VALIDACION BALANZA NCR",
+    description: "Revisión conexiones de balanza NCR POS",
+    youtubeId: "h58wpoxepyM"
   }
 ];
