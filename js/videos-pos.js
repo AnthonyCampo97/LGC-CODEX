@@ -25,5 +25,17 @@ const VIDEOS_SECCION = [
     title: "VALIDACION BALANZA NCR",
     description: "Revisión conexiones de balanza NCR POS",
     youtubeId: "h58wpoxepyM"
+  },
+  {
+    id: "pos4",
+    title: "POS NCR",
+    description: "Descripción básica de funcionamiento POS con bascula escáner",
+    youtubeId: "zSl6k58YBig"
+  },
+  {
+    id: "pos5",
+    title: "POS Torrey",
+    description: "Descripción básica de funcionamiento POS con balanza estándar",
+    youtubeId: "KTsdgYNWmpI"
   }
 ];
