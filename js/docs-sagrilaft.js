@@ -137,6 +137,18 @@ const DOCUMENTOS_SECCION = [
     title: "PRINCIPIOS PROTECCIÓN DE DATOS",
     description: "7 Principios de la protección de datos personales",
     file: "docs/SAGRILAFT/PILDORA-ENE26-PDP.pdf"
+  },
+  {
+    id: "sag-doc23",
+    title: "TONE AT THE TOP",
+    description: "tono desde la alta dirección",
+    file: "docs/SAGRILAFT/PILDORA-JUL26-PTEE.pdf"
+  },
+  {
+    id: "sag-doc24",
+    title: "PAPEL O FACHADA",
+    description: "Como detectarlas?",
+    file: "docs/SAGRILAFT/PILDORA-JUL26-SAGRILAFT.pdf"
   }
 
 ];
