@@ -37,5 +37,11 @@ const VIDEOS_SECCION = [
     title: "POS Torrey",
     description: "Descripción básica de funcionamiento POS con balanza estándar",
     youtubeId: "KTsdgYNWmpI"
+  },
+  {
+    id: "pos5",
+    title: "RESET FORMATO TSC TE200",
+    description: "Restablecer de fabrica la configuración de formato impresora Label TSC",
+    youtubeId: "S8rKTI2DE74"
   }
 ];

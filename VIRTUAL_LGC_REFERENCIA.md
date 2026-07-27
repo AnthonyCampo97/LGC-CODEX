@@ -1,9 +1,9 @@
 # 📋 VIRTUAL LGC — Documento de Referencia del Proyecto
-**Última actualización:** Julio 2025  
-**Desarrollador:** Anthony Campo (`AnthonyCampo97`)  
-**URL en producción:** https://virtual.lgc.com.co  
-**Repositorio GitHub:** https://github.com/AnthonyCampo97/LGC-CODEX  
-**Despliegue:** GitHub Pages con dominio personalizado  
+**Última actualización:** Julio 2026
+**Desarrollador:** Anthony Campo (`AnthonyCampo97`)
+**URL en producción:** https://virtual.lgc.com.co
+**Repositorio GitHub:** https://github.com/AnthonyCampo97/LGC-CODEX
+**Despliegue:** GitHub Pages con dominio personalizado
 
 ---
 
@@ -18,8 +18,8 @@ LGC-VIRTUAL/
 ├── nomina.html                 ← Módulo Nómina Web
 ├── pos.html                    ← Módulo POS (Punto de Venta)
 ├── carnes.html                 ← Módulo Carnes
-├── otros.html                  ← Módulo Otros
-├── sagrilaft.html              ← Módulo COMPLIANCE/SAGRILAFT (especial)
+├── sistemas.html                ← Módulo Sistemas (acceso restringido por password) 🆕
+├── sagrilaft.html               ← Módulo COMPLIANCE/SAGRILAFT (especial)
 │
 ├── img/
 │   ├── logo-la-gran-colombia.png   ← Logo principal (header + favicon)
@@ -39,9 +39,11 @@ LGC-VIRTUAL/
     ├── encuestas.js            ← Render de tarjetas de encuestas Google Forms
     ├── banner.js               ← Carousel/banner dinámico (COMPLIANCE)
     ├── popup.js                ← Lógica del popup de bienvenida
+    ├── gate.js                 ← Lógica del gate de acceso por password (solo Sistemas) 🆕
     │
     ├── ── CONFIGURACIÓN (sí editar) ───────────────────
     ├── popup-config.js         ← Config del popup (activar/tipo/contenido)
+    ├── gate-config.js          ← Config del password del módulo Sistemas (hash SHA-256) 🆕
     │
     ├── ── DATOS DE VIDEOS (uno por módulo) ────────────
     ├── videos-financiero.js
@@ -49,7 +51,7 @@ LGC-VIRTUAL/
     ├── videos-nomina.js
     ├── videos-pos.js
     ├── videos-carnes.js
-    ├── videos-otros.js (si aplica)
+    ├── videos-sistemas.js      ← (reemplaza a videos-otros.js) 🆕
     ├── videos-sagrilaft.js
     │
     ├── ── DATOS DE MANUALES PDF (uno por módulo) ──────
@@ -58,7 +60,7 @@ LGC-VIRTUAL/
     ├── docs-nomina.js
     ├── docs-pos.js
     ├── docs-carnes.js
-    ├── docs-otros.js (si aplica)
+    ├── docs-sistemas.js        ← (reemplaza a docs-otros.js) 🆕
     ├── docs-sagrilaft.js
     │
     ├── ── DATOS DE ENCUESTAS (solo COMPLIANCE) ────────
@@ -67,6 +69,8 @@ LGC-VIRTUAL/
     └── ── DATOS DEL BANNER (solo COMPLIANCE) ──────────
         └── slides-sagrilaft.js
 ```
+
+> 🗑️ **Eliminados:** `otros.html`, `js/videos-otros.js`, `js/docs-otros.js` — el módulo Otros fue reemplazado por Sistemas (ver sección dedicada más abajo).
 
 ---
 
@@ -115,12 +119,12 @@ LGC-VIRTUAL/
 | Nómina Web | nomina.html | 🧑‍💼 | `menu__item--azul` |
 | POS | pos.html | 🧾 | (sin modificador) |
 | Carnes | carnes.html | 🥩 | `menu__item--rojo` |
-| Otros | otros.html | ⚙️ | `menu__item--azul` |
+| **Sistemas** 🆕 | sistemas.html | 🖥️ | `menu__item--azul` |
 | COMPLIANCE | sagrilaft.html | 🛡️ | `menu__item--sagrilaft` |
 
 ---
 
-### Módulos estándar (Financiero, Comercial, Nómina, POS, Carnes, Otros)
+### Módulos estándar (Financiero, Comercial, Nómina, POS, Carnes, Sistemas)
 
 Estructura idéntica en todos:
 ```
@@ -143,6 +147,8 @@ Botón WhatsApp flotante (esquina inferior derecha)
 Scripts al final del body:
   videos-[modulo].js → docs-[modulo].js → player.js → pdf-viewer.js
 ```
+
+> **Excepción — Sistemas:** además de lo anterior, envuelve todo el contenido en `<div id="gatedContent">` (oculto por defecto) y agrega un `<div id="gateOverlay">` con el formulario de clave. Scripts: `gate-config.js` → `videos-sistemas.js` → `docs-sistemas.js` → `player.js` → `pdf-viewer.js` → `gate.js`. Ver sección dedicada abajo.
 
 ---
 
@@ -172,6 +178,32 @@ Scripts:
   → slides-sagrilaft.js → player.js → pdf-viewer.js
   → encuestas.js → banner.js
 ```
+
+---
+
+## 🔒 MÓDULO SISTEMAS — ACCESO RESTRINGIDO 🆕
+
+**Propósito:** capacitación técnica interna para el equipo de TI (videos y manuales que el resto del personal no debe ver). Reemplazó al antiguo módulo Otros.
+
+**Cómo funciona el gate:**
+- Al entrar a `sistemas.html`, todo el contenido (`#gatedContent`) está oculto detrás de un overlay (`#gateOverlay`) que pide una clave.
+- La clave se valida comparando su hash **SHA-256** contra el hash guardado en `gate-config.js` — la clave real nunca queda en texto plano en el repositorio.
+- Si es correcta, se guarda en `sessionStorage` y no se vuelve a pedir mientras esa pestaña del navegador siga abierta. Se cierra sesión al cerrar la pestaña o el navegador.
+- Si es incorrecta, muestra un mensaje de error y un pequeño efecto de "sacudida" en el formulario.
+
+**Archivos involucrados:**
+| Archivo | Tipo | ¿Se edita? |
+|---|---|---|
+| `gate-config.js` | Configuración | ✅ Sí — aquí se cambia el hash de la clave |
+| `gate.js` | Lógica | 🚫 No — igual categoría que `player.js` |
+
+**Cómo cambiar la clave:** instrucciones paso a paso incluidas como comentario dentro de `gate-config.js` (generar hash SHA-256 por consola del navegador y reemplazarlo).
+
+**⚠️ Límite de seguridad a tener presente:**
+Este gate es una barrera de **interfaz**, no de acceso real a nivel de servidor — mismo tipo de limitación ya conocida con los PDFs de COMPLIANCE:
+- El repositorio de GitHub es público, así que `videos-sistemas.js` y `docs-sistemas.js` son técnicamente accesibles vía URL directa (`raw.githubusercontent.com`) sin pasar por el password.
+- **Recomendación aplicada/pendiente:** subir los videos de YouTube como **"Ocultos/No listados"** (no públicos), para que el link no circule fuera del gate.
+- Para bloqueo real a nivel de acceso, las opciones siguen siendo las mismas que para COMPLIANCE: repo privado (plan de pago de GitHub) o mover los archivos a almacenamiento externo con URLs firmadas/temporales.
 
 ---
 
@@ -230,6 +262,14 @@ const BANNER_SLIDES = [
 ];
 ```
 
+### Password del módulo Sistemas (`js/gate-config.js`) 🆕
+```javascript
+const GATE_CONFIG = {
+  hash: "...",              // hash SHA-256 de la clave (nunca texto plano)
+  recordarSesion: true      // true = no vuelve a pedir clave en la misma pestaña
+};
+```
+
 ---
 
 ## 🔔 POPUP DE BIENVENIDA (`js/popup-config.js`)
@@ -272,6 +312,8 @@ El visor de PDF usa **PDF.js renderizado en canvas**, lo que significa:
 - `@media print` en CSS: página en blanco si intentan imprimir
 - El usuario navega página a página con botones `‹ ›` propios
 
+*(Esta protección aplica igual en Sistemas — el password del módulo se suma como una capa adicional antes de siquiera llegar al visor.)*
+
 ---
 
 ## 📱 BOTÓN WHATSAPP
@@ -281,6 +323,7 @@ El visor de PDF usa **PDF.js renderizado en canvas**, lo que significa:
 - **Posición:** fijo, esquina inferior derecha en todas las páginas
 - **Etiqueta visible:** "Soporte Sistemas" (se oculta en móviles muy pequeños, queda solo el ícono)
 - **En móvil (<480px):** solo ícono circular, texto oculto
+- **En `sistemas.html`:** visible incluso antes de ingresar la clave, por si alguien necesita solicitarla.
 
 ---
 
@@ -300,7 +343,7 @@ git commit -m "Descripción del cambio"
 git push
 ```
 
-**Rama activa:** `main`  
+**Rama activa:** `main`
 **Remote:** `origin → https://github.com/AnthonyCampo97/LGC-CODEX.git`
 
 **Advertencias conocidas (inofensivas en Windows):**
@@ -313,13 +356,14 @@ git push
 | Regla | Razón |
 |---|---|
 | No usar frameworks (React, Vue, etc.) | El proyecto es vanilla HTML/CSS/JS por decisión de arquitectura |
-| No modificar `player.js`, `pdf-viewer.js`, `banner.js`, `encuestas.js`, `popup.js` | Son archivos de lógica — solo se editan los archivos de datos |
-| No mover `id="videoGrid"`, `id="docGrid"`, `id="playerModal"`, `id="pdfModal"` | Los scripts los buscan por ID exacto |
+| No modificar `player.js`, `pdf-viewer.js`, `banner.js`, `encuestas.js`, `popup.js`, `gate.js` | Son archivos de lógica — solo se editan los archivos de datos/config |
+| No mover `id="videoGrid"`, `id="docGrid"`, `id="playerModal"`, `id="pdfModal"`, `id="gateOverlay"`, `id="gatedContent"` | Los scripts los buscan por ID exacto |
 | No cambiar rutas de `/img/`, `/js/`, `/style/`, `/docs/` | Rutas relativas hardcodeadas en todo el proyecto |
+| No guardar la clave de Sistemas en texto plano | Siempre en hash SHA-256 dentro de `gate-config.js` |
 
 ---
 
-## ✅ ESTADO ACTUAL (post-revisión Julio 2025)
+## ✅ ESTADO ACTUAL (post-actualización Julio 2026)
 
 | Elemento | Estado |
 |---|---|
@@ -335,3 +379,7 @@ git push
 | Año dinámico en footer del landing | ✅ OK |
 | Dominio personalizado virtual.lgc.com.co | ✅ OK |
 | HTTPS activo | ✅ OK |
+| **Módulo Otros** | 🗑️ Eliminado (reemplazado) |
+| **Módulo Sistemas con gate de password** 🆕 | ✅ OK — probado y en producción |
+| Videos de Sistemas subidos como "No listados" en YouTube | ⏳ Pendiente de confirmar |
+| Sitemap actualizado (otros.html → sistemas.html) | ⏳ Pendiente de revisar |
