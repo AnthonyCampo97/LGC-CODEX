@@ -10,8 +10,8 @@
 const VIDEOS_SECCION = [
   {
     id: "fin1",
-    title: "Introducción al área Financiera",
-    description: "Conceptos básicos y flujo general del área financiera.",
-    youtubeId: "qRpLrqg-z3k"
+    title: "SOLICITUD HORDE",
+    description: "Paso a paso generación solicitud HORDE LGC",
+    youtubeId: "gCBbHgcUWM4"
   }
 ];

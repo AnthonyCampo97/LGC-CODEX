@@ -19,5 +19,11 @@ const VIDEOS_SECCION = [
     title: "CAMBIO DE ROLLO SM-300",
     description: "Paso a paso cambio de rollo balanza carnes SM300",
     youtubeId: "IlTvihLMYSE"
+  },
+  {
+    id: "carnes3",
+    title: "SOLICITUD HORDE",
+    description: "Paso a paso generación solicitud HORDE LGC",
+    youtubeId: "gCBbHgcUWM4"
   }
 ];

@@ -10,8 +10,8 @@
 const VIDEOS_SECCION = [
   {
     id: "nomina1",
-    title: "Video de ejemplo - nomina",
-    description: "Reemplaza este video por el contenido real de capacitación.",
-    youtubeId: "qRpLrqg-z3k"
+    title: "SOLICITUD HORDE",
+    description: "Paso a paso generación solicitud HORDE LGC",
+    youtubeId: "gCBbHgcUWM4"
   }
 ];
