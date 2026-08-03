@@ -149,6 +149,12 @@ const DOCUMENTOS_SECCION = [
     title: "PAPEL O FACHADA",
     description: "Como detectarlas?",
     file: "docs/SAGRILAFT/PILDORA-JUL26-SAGRILAFT.pdf"
+  },
+  {
+    id: "sag-doc25",
+    title: "PHISHING",
+    description: "Y su relación con la protección de datos",
+    file: "docs/SAGRILAFT/PILDORA-JUL26-PDP.pdf"
   }
 
 ];

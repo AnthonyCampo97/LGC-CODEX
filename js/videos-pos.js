@@ -55,5 +55,11 @@ const VIDEOS_SECCION = [
     title: "DESCONGELAR NOTA ELECTRONICA",
     description: "Paso a paso descongelar nota electrónica POS",
     youtubeId: "XHLyHu4COW8"
+  },
+  {
+    id: "pos9",
+    title: "FUNCIONAMIENTO UPS",
+    description: "Descripción de funcionamiento UPS y llaves de transferencia circuito publico eléctrico.",
+    youtubeId: "-DJ0lJrzJTc"
   }
 ];
