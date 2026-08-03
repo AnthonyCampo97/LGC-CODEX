@@ -25,5 +25,11 @@ const VIDEOS_SECCION = [
     title: "SOLICITUD HORDE",
     description: "Paso a paso generación solicitud HORDE LGC",
     youtubeId: "gCBbHgcUWM4"
+  },
+  {
+    id: "carnes4",
+    title: "CAMBIO ROLLO SM 100",
+    description: "Paso a paso cambio de rollo en balanza SM-100",
+    youtubeId: "yuHG7oa5-NY"
   }
 ];
