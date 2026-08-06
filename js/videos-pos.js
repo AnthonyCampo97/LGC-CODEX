@@ -61,5 +61,11 @@ const VIDEOS_SECCION = [
     title: "FUNCIONAMIENTO UPS",
     description: "Descripción de funcionamiento UPS y llaves de transferencia circuito publico eléctrico.",
     youtubeId: "-DJ0lJrzJTc"
+  },
+  {
+    id: "pos10",
+    title: "TOMAS REGULADOS POS",
+    description: "Breve descripción funcionamiento circuito regulado.",
+    youtubeId: "_AC0TSk3ino"
   }
 ];
