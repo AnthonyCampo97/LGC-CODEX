@@ -10,7 +10,7 @@
 const VIDEOS_SECCION = [
   {
     id: "pos1",
-    title: "SOLICITUD HORDE",
+    title: "RADICADO HORDE",
     description: "Paso a paso generación solicitud HORDE LGC",
     youtubeId: "uy9DV0Xxsy0"
   },
