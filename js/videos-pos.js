@@ -67,5 +67,11 @@ const VIDEOS_SECCION = [
     title: "TOMAS REGULADOS POS",
     description: "Breve descripción funcionamiento circuito regulado.",
     youtubeId: "_AC0TSk3ino"
+  },
+  {
+    id: "pos11",
+    title: "KUPI PORTAL",
+    description: "Paso a paso para restablecer contraseña del portal Kupi",
+    youtubeId: "qCdZV4ZkTCU"
   }
 ];
