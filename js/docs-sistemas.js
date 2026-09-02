@@ -12,4 +12,10 @@ const DOCUMENTOS_SECCION = [
   //   description: "Procedimiento técnico interno para el equipo de TI.",
   //   file: "docs/manual-servidores-ti.pdf"
   // }
+  {
+    id: "dic-sis1",
+    title: "ARQUITECTURA UNOEE 1",
+    description: "TERMINOLOGIA",
+    file: "docs/UNOEE/terminologia_unoee.pdf"
+  }
 ];

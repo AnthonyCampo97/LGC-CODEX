@@ -19,7 +19,7 @@ const POPUP_CONFIG = {
   /* ── ¿Mostrar el popup al cargar la página? ────────────
      true  = SÍ mostrar
      false = NO mostrar (el popup queda desactivado)        */
-  activo: true,
+  activo: false,
 
   /* ── Título y descripción que aparecen arriba ────────── */
   titulo: "📢 Comunicado Importante",
