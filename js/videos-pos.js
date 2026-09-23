@@ -73,5 +73,11 @@ const VIDEOS_SECCION = [
     title: "KUPI PORTAL",
     description: "Paso a paso para restablecer contraseña del portal Kupi",
     youtubeId: "qCdZV4ZkTCU"
+  },
+  {
+    id: "pos12",
+    title: "IMPRESORA LABEL PDV",
+    description: "Paso a paso cambio de rollo y cinta termica",
+    youtubeId: "5M_v_Lnsvq8"
   }
 ];
